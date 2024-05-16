@@ -23,7 +23,7 @@ header {
 /* Seção carousel de imagens */
 
 .carousel-item img {
-    max-height: 615px;
+    height: 615px;
     width: auto;
     object-fit: cover;
     object-position: center;
