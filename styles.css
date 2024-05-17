@@ -80,7 +80,8 @@ header {
     align-items: center;
     z-index: 1;
     overflow: hidden;
-    height: 720px;
+    height: 700px;
+    margin-top: 20px;
 }
 
 .atividades .carousel-item.active {
@@ -123,12 +124,8 @@ header {
     padding: 70px;
 }
 
-.doacoes .card {
-    margin-bottom: 20px;
-}
-
 .doacoes .card-img-top {
-    height: 340px;
+    height: 320px;
 }
 
 .doacoes .card-body {
@@ -146,6 +143,37 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Seção ponto de coleta */
+
+.ponto_coleta { 
+    background-color: #9dcefe;
+    height: 750px;
+}
+
+.ponto_coleta .container {
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ponto_coleta h3 {
+    width: 400px;
+    padding: 10px;
+}
+
+.ponto_coleta p {
+    text-align: justify;
+    font-size: 22px;
+    padding: 10px;
+    width: 400px;
+}
+
+.ponto_coleta img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+}
 
 /* Seção sobre a doação Pix */
 
@@ -161,16 +189,24 @@ header {
     align-items: center;
 }
 
+.vaquinha .titulo {
+    text-align: center;
+    padding: 20px;
+}
+
 .vaquinha p {
     text-align: justify;
     font-size: 22px;
-    padding: 40px;
+    padding: 5px;
+    margin-top: 25px;
 }
 
 .vaquinha img {
-    max-width: 100%;
+    width: 500px;
     height: auto;
-    padding: 40px;
+    border-style: solid;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 /* Seção divulgação dos resultados */
@@ -185,6 +221,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.resultados .titulo {
+    text-align: center;
+    padding: 20px;
+    width: 500px;
 }
 
 .resultados p {
