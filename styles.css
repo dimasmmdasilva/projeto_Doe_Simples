@@ -17,10 +17,9 @@ header {
     padding: 20px;
     text-align: center;
     font-size: 40px;
-
 }
 
-/* Seção carousel de imagens */
+/* Seção carousel de imagens */ 
 
 .carousel-item img {
     height: 615px;
@@ -29,49 +28,104 @@ header {
     object-position: center;
 }
 
+@media (max-width: 700px) {
+    .carousel-item img {
+        height: 580px;
+    }
+}
+
 /* Seção Semente Esperança */
 
 .ong_semente { 
     background-color: #f9edc6;
-    height: 750px;
+    height: auto;
+    width: auto;
 }
 
 .ong_semente .container {
-    height: 750px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.ong_semente .contadores div {
-    display: flex;
-    align-items: center;
-    justify-content: start;
+.ong_semente .titulo_ong, .ong_semente .sobre_ong, .ong_semente .contadores, .ong_semente .imagem_ong {
+    width: 100%;
+    text-align: center;
 }
 
 .ong_semente h3 {
-    width: 100px;
-    margin-left: 25px;
-    margin-top: -5px;
+    margin-top: 120px;
+    margin-bottom: 50px;
 }
 
 .ong_semente p {
     text-align: justify;
-    font-size: 19px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.ong_semente .contadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.ong_semente .contadores div {
+    margin: 0;
+    padding: 0;
+    margin-right: 80px;
+    margin-top: -60px;
 }
 
 .ong_semente img {
     max-width: 100%;
     height: auto;
-    padding: 20px;
+    margin-bottom: 60px;
 }
 
-/* Seção atividades da Ong */
+@media (max-width: 700px) {
+    .ong_semente h3 {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .ong_semente p {
+        font-size: 16px;
+    }
+    .ong_semente .contadores div {
+        margin: 0;
+        padding: 0;
+        margin-top: -60px;
+    }
+    .ong_semente img {
+        margin-bottom: 80px;
+    }
+}
+
+
+/* Seção atividades */ 
 
 .atividades { 
     background-color: #9dcefe;
-    height: 750px;
+    height: auto;
+    width: auto;
+}
+
+.atividades .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+
+.atividades h3 {
+    margin-top: 80px;
+    margin-bottom: -10px;
 }
 
 .atividades .carousel-item {
@@ -81,7 +135,7 @@ header {
     z-index: 1;
     overflow: hidden;
     height: 700px;
-    margin-top: 20px;
+    margin-bottom: 60px;
 }
 
 .atividades .carousel-item.active {
@@ -100,7 +154,7 @@ header {
 }
 
 .atividades .card-body {
-    padding: 30px;
+    padding: 10px;
 }
 
 .atividades .carousel-control-prev-icon,
@@ -112,16 +166,50 @@ header {
     z-index: 3;
 }
 
-/* Seção sobre as doações */
+@media (max-width: 700px) {
+    .atividades h3 {
+        margin-top: 80px;
+        margin-bottom: -20px;
+    }
+    .atividades h5 {
+        font-size: 20px;
+    }
+    .atividades p {
+        font-size: 14px;
+    }
+    .atividades .card {
+        height: 500px;
+    }
+    .atividades .card-img-top {
+        height: 400;
+    }
+}
+
+/* Seção doações */
 
 .doacoes { 
     background-color: #f9edc6;
-    height: 750px;
+    height: auto;
+    width: auto;
+}
+
+.doacoes .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
 }
 
 .doacoes .titulo {
     text-align: center;
-    padding: 70px;
+    padding: 60px;
+    margin-top: 40px;
+}
+
+.doacoes .row > div {
+    margin-bottom: 120px;
 }
 
 .doacoes .card-img-top {
@@ -143,11 +231,41 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+@media (max-width: 700px) {
+    .doacoes {
+        height: auto;
+    }
+    .doacoes .card {
+        width: 100%;
+        margin: 30px auto;
+        margin-bottom: 30px;
+    }
+    .doacoes .titulo {
+        padding: 20px;
+    }
+    .doacoes .card-text {
+        font-size: 14px;
+    }
+    .doacoes .row > div {
+        flex: 0 0 100%;
+        width: 80%;
+        height: 80%;
+        margin-bottom: 20px;
+    }
+    .doacoes .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+}
+
 /* Seção ponto de coleta */
 
 .ponto_coleta { 
     background-color: #9dcefe;
-    height: 750px;
+    height: auto;
+    width: auto;
 }
 
 .ponto_coleta .container {
@@ -160,30 +278,58 @@ header {
 .ponto_coleta h3 {
     width: 400px;
     padding: 10px;
+    margin-bottom: 40px;
 }
 
 .ponto_coleta p {
     text-align: justify;
     font-size: 22px;
     padding: 10px;
-    width: 400px;
+    width: 600px;
 }
 
-.ponto_coleta img {
-    max-width: 100%;
-    height: auto;
+.ponto_coleta iframe {
+    width: 550px;
+    height: 550px;
     padding: 20px;
 }
 
-/* Seção sobre a doação Pix */
+@media (max-width: 700px) {
+    .ponto_coleta {
+        height: auto;
+    }
+    .ponto_coleta .container {
+        height: auto;
+    }
+    .ponto_coleta h3 {
+        width: 400px;
+        margin: 30px;
+        margin-top: 60px;
+    }
+    .ponto_coleta p {
+        text-align: justify;
+        font-size: 16px;
+        margin: 20px;
+        width: auto;
+    }
+    .ponto_coleta iframe {
+        margin: 20px;
+        width: 500px;
+        height: 500px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Seção doação Pix */
 
 .vaquinha { 
     background-color: #f9edc6;
-    height: 750px;
+    height: auto;
+    width: auto;
 }
 
 .vaquinha .container {
-    height: 750px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,32 +338,68 @@ header {
 .vaquinha .titulo {
     text-align: center;
     padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 30px;
 }
 
 .vaquinha p {
     text-align: justify;
     font-size: 22px;
     padding: 5px;
-    margin-top: 25px;
+    margin: 25px;
 }
 
 .vaquinha img {
     width: 500px;
-    height: auto;
+    height: 500px;
     border-style: solid;
-    margin-top: 20px;
-    margin-left: 40px;
 }
 
-/* Seção divulgação dos resultados */
+.vaquinha .row {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 700px) {
+    .vaquinha {
+        height: auto;
+    }
+    .vaquinha .container {
+        height: auto;
+    }
+    .vaquinha .titulo {
+        text-align: center;
+        padding: 30px;
+        margin-top: 50px;
+    }    
+    .vaquinha p {
+        text-align: justify;
+        font-size: 16px;
+        padding: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }    
+    .vaquinha img {
+        margin-left: 80px;
+        width: 350px;
+        height: 350px;
+        border-style: solid;
+        margin-bottom: 10px;
+    }
+    .vaquinha .row {
+        margin-bottom: 50px;
+    }
+}
+
+/* Seção dos resultados */
 
 .resultados { 
     background-color: #9dcefe;
-    height: 750px;
+    height: auto;
+    width: auto;
 }
 
 .resultados .container {
-    height: 750px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,6 +409,7 @@ header {
     text-align: center;
     padding: 20px;
     width: 500px;
+    margin: 320px;
 }
 
 .resultados p {
@@ -241,6 +424,20 @@ header {
     padding: 40px;
 }
 
+@media (max-width: 700px) {
+    .resultados {
+        height: auto;
+    }
+    .resultados .container {
+        height: auto;
+    }
+    .resultados .titulo h3 {
+        text-align: center;
+        font-size: 16px;
+        margin: 50px;
+    }
+}
+
 /* Final da página */
 
 footer {
@@ -250,6 +447,6 @@ footer {
 }
 
 footer h3 {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bolder;
 }

@@ -5,7 +5,7 @@ function animarContador(id, start, end, duration) {
     let increment = end > start ? 1 : -1;
     let stepTime = Math.abs(Math.floor(duration / range));
     let timer = setInterval(() => {
-        current += increment;
+        current += increment; 
         obj.textContent = current;
         if (current == end) {
             clearInterval(timer);
@@ -14,6 +14,6 @@ function animarContador(id, start, end, duration) {
 }
 
 window.onload = function() {
-    animarContador('contadorCrianças', 0, 180, 40000);
-    animarContador('contadorColaboradores', 0, 40, 40000);
+    animarContador('contadorCrianças', 0, 180, 50000);
+    animarContador('contadorColaboradores', 0, 40, 50000);
 };
