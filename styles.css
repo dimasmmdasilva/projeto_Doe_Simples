@@ -5,11 +5,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
+    overflow-x: hidden;
 }
 
 body {
     max-width: 100%;
-    overflow-x: hidden;
 }
 
 header {
@@ -245,7 +245,7 @@ header {
 }
 
 .doacoes .card {
-    height: 450px;
+    height: 420px;
 }
 
 .doacoes .card-img-top {
@@ -253,7 +253,7 @@ header {
 }
 
 .doacoes .card-body {
-    padding: 15px;
+    padding: 5px;
     text-align: center;
 }
 
