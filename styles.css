@@ -330,7 +330,6 @@ header {
 .ponto_coleta { 
     background-color: #9dcefe;
     height: 750px;
-    width: auto;
 }
 
 .ponto_coleta .container {
@@ -340,11 +339,17 @@ header {
     align-items: center;
 }
 
+.ponto_coleta .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .ponto_coleta h3 {
     width: 400px;
     padding: 10px;
     margin-bottom: 40px;
-    margin-top: 120px;
 }
 
 .ponto_coleta p {
@@ -372,9 +377,14 @@ header {
         flex-direction: column;
         align-items: center;
     }
+    .ponto_coleta .row {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
     .ponto_coleta h3 {
-        margin: 30px;
-        margin-top: 60px;
+        margin: 20px;
+        margin-top: 80px;
     }
     .ponto_coleta p {
         text-align: justify;
@@ -383,10 +393,9 @@ header {
         width: auto;
     }
     .ponto_coleta iframe {
-        margin: 20px;
-        width: 450px;
-        height: 450px;
-        margin-bottom: 60px;
+        width: 500px;
+        height: 500px;
+        margin: 0 0 60px -70px;
     }
 }
 
@@ -396,12 +405,8 @@ header {
     }
     .ponto_coleta .container {
         height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .ponto_coleta h3 {
-        width: auto;
         padding: 30px;
         margin-top: 60px;
     }
@@ -461,13 +466,11 @@ header {
         flex-direction: column;
         align-items: center;
     }
-
     .vaquinha .row {
         width: 100%;
         flex-direction: column;
         align-items: center;
     }
-
     .vaquinha .col-md-5, .vaquinha .col-md-7 {
         width: 100%;
         display: flex;
