@@ -300,9 +300,9 @@ header {
     }
     .doacoes .card {
         width: 100%;
-        margin: 30px auto;
+        margin: 20px auto;
         margin-bottom: 30px;
-        height: auto;
+        height: 320;
     }
     .doacoes .titulo {
         padding: 20px;
