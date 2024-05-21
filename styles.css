@@ -4,12 +4,12 @@
     font-style: normal;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 body {
     max-width: 100%;
+    overflow-x: hidden;
 }
 
 header {
