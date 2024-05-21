@@ -12,6 +12,12 @@ body {
     overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+    .body {
+        overflow-x: hidden;
+    }
+}
+
 header {
     background-color: #74b9ff;
     padding: 20px;
