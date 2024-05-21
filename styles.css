@@ -52,7 +52,7 @@ header {
 
 @media (max-width: 768px) {
     .carousel-caption {
-        width: 40%;
+        width: 45%;
         height: 25%;
         font-size: 12px;
     }
