@@ -19,7 +19,21 @@ header {
     font-size: 40px;
 }
 
-/* Seção carousel de imagens */ 
+/* Estilos gerais do carousel */
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    width: 45%;
+    height: 15%;
+    border-radius: 8px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
 
 .carousel-item img {
     height: 615px;
@@ -28,11 +42,28 @@ header {
     object-position: center;
 }
 
-@media (max-width: 700px) {
-    .carousel-item img {
-        height: 580px;
+@media (max-width: 1224px) {
+    .carousel-caption {
+        width: 50%;
+        height: 20%;
+        top: 80%;
     }
 }
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 40%;
+        height: 20%;
+        font-size: 12px;
+    }
+    .carousel-caption h3 {
+        font-size: 16px;
+    }
+    .carousel-item img {
+        height: 480px;
+    }
+}
+
 
 /* Seção Semente Esperança */
 
@@ -87,9 +118,9 @@ header {
     margin-bottom: 60px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .ong_semente h3 {
-        margin-top: 80px;
+        margin-top: 70px;
         margin-bottom: 30px;
     }
     .ong_semente p {
@@ -98,7 +129,7 @@ header {
     .ong_semente .contadores div {
         margin: 0;
         padding: 0;
-        margin-top: -60px;
+        margin-top: -40px;
     }
     .ong_semente img {
         margin-bottom: 80px;
@@ -166,10 +197,10 @@ header {
     z-index: 3;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .atividades h3 {
         margin-top: 80px;
-        margin-bottom: -20px;
+        margin-bottom: -50px;
     }
     .atividades h5 {
         font-size: 20px;
@@ -179,6 +210,7 @@ header {
     }
     .atividades .card {
         height: 500px;
+        width: 80%;
     }
     .atividades .card-img-top {
         height: 400;
@@ -212,6 +244,10 @@ header {
     margin-bottom: 120px;
 }
 
+.doacoes .card {
+    height: 450px;
+}
+
 .doacoes .card-img-top {
     height: 320px;
 }
@@ -231,7 +267,34 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
+    .doacoes {
+        height: auto;
+    }
+    .doacoes .card {
+        width: 450px;
+        margin: 30px auto;
+        margin-bottom: 30px;
+        height: 420px;
+    }
+    .doacoes .card-img-top {
+        height: 320px;
+    }
+    .doacoes .titulo {
+        padding: 14px;
+    }
+    .doacoes .card-text {
+        font-size: 14px;
+    }
+    .doacoes .row > div {
+        flex: 0 0 100%;
+        width: 80%;
+        height: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
     .doacoes {
         height: auto;
     }
@@ -239,9 +302,11 @@ header {
         width: 100%;
         margin: 30px auto;
         margin-bottom: 30px;
+        height: auto;
     }
     .doacoes .titulo {
         padding: 20px;
+        margin-top: 60px;
     }
     .doacoes .card-text {
         font-size: 14px;
@@ -256,7 +321,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
     }
 }
 
@@ -264,7 +329,7 @@ header {
 
 .ponto_coleta { 
     background-color: #9dcefe;
-    height: auto;
+    height: 750px;
     width: auto;
 }
 
@@ -279,6 +344,7 @@ header {
     width: 400px;
     padding: 10px;
     margin-bottom: 40px;
+    margin-top: 120px;
 }
 
 .ponto_coleta p {
@@ -292,17 +358,21 @@ header {
     width: 550px;
     height: 550px;
     padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
-@media (max-width: 700px) {
-    .ponto_coleta {
+@media (max-width: 1200px) {
+    .ponto_coleta { 
         height: auto;
     }
     .ponto_coleta .container {
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .ponto_coleta h3 {
-        width: 400px;
         margin: 30px;
         margin-top: 60px;
     }
@@ -314,8 +384,36 @@ header {
     }
     .ponto_coleta iframe {
         margin: 20px;
-        width: 500px;
-        height: 500px;
+        width: 450px;
+        height: 450px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ponto_coleta { 
+        height: auto;
+    }
+    .ponto_coleta .container {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ponto_coleta h3 {
+        width: auto;
+        padding: 30px;
+        margin-top: 60px;
+    }
+    .ponto_coleta p {
+        text-align: justify;
+        font-size: 16px;
+        padding: 20px;
+    }
+    .ponto_coleta iframe {
+        margin: 20px;
+        width: 450px;
+        height: 450px;
         margin-bottom: 60px;
     }
 }
@@ -347,48 +445,58 @@ header {
     font-size: 22px;
     padding: 5px;
     margin: 25px;
+    margin-bottom: 80px;
 }
 
 .vaquinha img {
     width: 500px;
     height: 500px;
     border-style: solid;
+    margin-bottom: 80px;
 }
 
-.vaquinha .row {
-    margin-bottom: 100px;
-}
-
-@media (max-width: 700px) {
-    .vaquinha {
-        height: auto;
-    }
+@media (max-width: 1200px) {
     .vaquinha .container {
-        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+    .vaquinha .row {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vaquinha .col-md-5, .vaquinha .col-md-7 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
     .vaquinha .titulo {
         text-align: center;
-        padding: 30px;
-        margin-top: 50px;
-    }    
+        padding: 20px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
     .vaquinha p {
         text-align: justify;
         font-size: 16px;
-        padding: 5px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }    
-    .vaquinha img {
-        margin-left: 80px;
-        width: 350px;
-        height: 350px;
-        border-style: solid;
-        margin-bottom: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 60px;
     }
-    .vaquinha .row {
-        margin-bottom: 50px;
+    .vaquinha img {
+        width: 80%;
+        height: auto;
+        border-style: solid;
+        margin-bottom: 20px;
     }
 }
+
 
 /* Seção dos resultados */
 
@@ -424,7 +532,7 @@ header {
     padding: 40px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .resultados {
         height: auto;
     }
@@ -447,6 +555,5 @@ footer {
 }
 
 footer h3 {
-    font-size: 14px;
-    font-weight: bolder;
+    font-size: 16px;
 }

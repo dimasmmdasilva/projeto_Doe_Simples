@@ -14,6 +14,6 @@ function animarContador(id, start, end, duration) {
 }
 
 window.onload = function() {
-    animarContador('contadorCrianças', 0, 180, 50000);
-    animarContador('contadorColaboradores', 0, 40, 50000);
+    animarContador('contadorCrianças', 0, 180, 40000);
+    animarContador('contadorColaboradores', 0, 40, 40000);
 };
