@@ -91,6 +91,10 @@ header {
     text-align: center;
 }
 
+.titulo_ong svg {
+    margin-bottom: 35px;
+}
+
 .ong_semente h3 {
     margin-top: 120px;
     margin-bottom: 50px;
