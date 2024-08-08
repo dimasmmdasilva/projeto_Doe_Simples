@@ -80,6 +80,9 @@ header.reduzido .titulo {
 }
 
 @media (max-width: 768px) {
+    .carousel {
+        margin-top: -5px;
+    }
     .carousel-caption {
         width: 45%;
         height: 25%;
@@ -89,7 +92,7 @@ header.reduzido .titulo {
         font-size: 16px;
     }
     .carousel-item img {
-        height: 550px;
+        height: 540px;
     }
 }
 
