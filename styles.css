@@ -22,7 +22,11 @@ header {
     background-color: #74b9ff;
     padding: 20px;
     text-align: center;
-    font-size: 40px;
+}
+
+.titulo {
+    font-weight: bolder;
+
 }
 
 /* Estilos gerais do carousel */
@@ -582,5 +586,6 @@ footer {
 }
 
 footer h3 {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bolder;
 }
