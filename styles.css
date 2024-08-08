@@ -22,14 +22,30 @@ header {
     background-color: #74b9ff;
     padding: 20px;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Estilo para o header reduzido */
+header.reduzido {
+    padding: 10px;
+}
+
+/* Estilo para o h3 dentro do header reduzido */
+header.reduzido .titulo {
+    font-size: 20px;
 }
 
 .titulo {
     font-weight: bolder;
-
 }
 
 /* Estilos gerais do carousel */
+
+.carousel {
+    margin-top: 86px;
+}
 
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
