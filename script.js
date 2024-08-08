@@ -26,10 +26,7 @@ window.addEventListener('scroll', function() {
 
     if (window.scrollY >= ongSectionTop) {
         header.classList.add('reduzido');
-        titulo.innerHTML = titulo.innerHTML.replace('Doe Simples', '<h3 class="titulo">Doe Simples</h3>');
     } else {
         header.classList.remove('reduzido');
-        titulo.innerHTML = titulo.innerHTML.replace('<h3 class="titulo">Doe Simples</h3>', 'Doe Simples');
     }
 });
-
