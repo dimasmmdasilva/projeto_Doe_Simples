@@ -81,4 +81,7 @@
     .text {
         font-size: 16px;
     }
+    .prev, .next {
+        display: none;
+    }
 }
