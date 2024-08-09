@@ -38,5 +38,7 @@
 }
 
 @media (max-width: 768px) {
-
+    .mensagem {
+        font-size: 20px !important;
+    }
 }
