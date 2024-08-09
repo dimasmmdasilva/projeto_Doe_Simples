@@ -1,0 +1,45 @@
+.resultados { 
+    background-color: #9dcefe;
+    height: auto;
+    width: auto;
+}
+
+.resultados .container {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultados .titulo {
+    text-align: center;
+    padding: 20px;
+    width: 500px;
+    margin: 320px;
+}
+
+.resultados p {
+    text-align: justify;
+    font-size: 22px;
+    padding: 40px;
+}
+
+.resultados img {
+    max-width: 100%;
+    height: auto;
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .resultados {
+        height: auto;
+    }
+    .resultados .container {
+        height: auto;
+    }
+    .resultados .titulo h3 {
+        text-align: center;
+        font-size: 16px;
+        margin: 50px;
+    }
+}

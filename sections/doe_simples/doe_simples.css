@@ -1,0 +1,42 @@
+.doe_simples {
+    background-color: #9dcefe;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mensagem {
+    font-family: "Prata", serif;
+    font-size: 30px !important;
+    opacity: 0;
+    position: relative;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    margin-bottom: 50px;
+}
+
+/* Definindo as direções de entrada para as mensagens */
+.primeira-mensagem {
+    transform: translateX(-100%); /* Da esquerda para a direita */
+    margin-top: 150px !important;
+}
+
+.segunda-mensagem {
+    transform: translateX(100%); /* Da direita para a esquerda */
+}
+
+.terceira-mensagem {
+    transform: translateX(-100%); /* Da esquerda para a direita */
+}
+
+/* Quando a classe 'aparecer' for adicionada, as mensagens se movem para a posição original */
+.mensagem.aparecer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .mensagem {
+        font-size: 24px !important;
+    }
+}

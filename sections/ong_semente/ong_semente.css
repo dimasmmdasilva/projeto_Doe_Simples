@@ -1,0 +1,42 @@
+.ong_semente { 
+    background-color: #f9edc6;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.mensagem {
+    font-family: "Prata", serif;
+    font-size: 24px;
+    opacity: 0;
+    position: relative;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    margin-top: 20px;
+}
+
+.primeira-mensagem {
+    transform: translateX(-100%);
+}
+
+.segunda-mensagem {
+    transform: translateX(100%);
+}
+
+.terceira-mensagem {
+    transform: translateX(-100%);
+}
+
+.mensagem.aparecer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+
+}
