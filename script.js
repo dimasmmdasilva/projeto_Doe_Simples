@@ -69,12 +69,49 @@ function configurarOngSementeObserver() {
     }
 }
 
+// Função para o slide de atividades
+function configurarSlidesAtividades() {
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slides");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].classList.add("active");
+        setTimeout(showSlides, 7000); // 7 segundos por slide
+    }
+
+    function plusSlides(n) {
+        slideIndex += n;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        if (slideIndex < 1) {slideIndex = slides.length}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slides[slideIndex - 1].classList.add("active");
+    }
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        plusSlides(-1);
+    });
+
+    document.querySelector('.next').addEventListener('click', function() {
+        plusSlides(1);
+    });
+
+    showSlides(); // Inicia o slideshow
+}
 
 // Função executada quando a página é carregada
 window.onload = function() {
     carregarSection('sections/doe_simples/doe_simples.html', 'sections/doe_simples/doe_simples.css', 'doe_simples', configurarDoeSimplesObserver);
     carregarSection('sections/ong_semente/ong_semente.html', 'sections/ong_semente/ong_semente.css', 'ong_semente', configurarOngSementeObserver);
-    carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades');
+    carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades', configurarSlidesAtividades);
     carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes');
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta');
     carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha');
