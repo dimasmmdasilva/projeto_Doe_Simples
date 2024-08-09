@@ -8,7 +8,7 @@
 
 .mensagem {
     font-family: "Prata", serif;
-    font-size: 30px !important;
+    font-size: 26px !important;
     opacity: 0;
     position: relative;
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
