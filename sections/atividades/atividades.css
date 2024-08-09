@@ -1,6 +1,6 @@
 .atividades {
     background-color: #9dcefe;
-    padding: 50px 0;
+    padding: 150px 0;
 }
 
 .slideshow {
@@ -76,7 +76,7 @@
 
 @media (max-width: 768px) {
     .slides img {
-        height: 300px;
+        height: 320px;
     }
     .text {
         font-size: 16px;
