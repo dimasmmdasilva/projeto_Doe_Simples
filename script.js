@@ -83,7 +83,7 @@ function configurarSlidesAtividades() {
             slideIndex = 1;
         }
         slides[slideIndex - 1].classList.add("active");
-        setTimeout(showSlides, 7000); // 7 segundos por slide
+        setTimeout(showSlides, 3000);
     }
 
     function plusSlides(n) {
