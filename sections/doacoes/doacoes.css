@@ -26,27 +26,31 @@
 .imagens-doacao {
     display: flex;
     gap: 20px; /* Espaçamento entre as imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas menores */
+    justify-content: center; /* Centraliza as imagens */
 }
 
-.imagem-arroz, .imagem-feijao {
+.imagem-arroz, .imagem-feijao, .imagem-arroz-feijao {
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
     margin: 25px;
-    width: 350px; /* Largura da imagem */
-    height: 350px; /* Altura da imagem */
-    border-radius: 50%; /* Formato circular */
-    object-fit: cover; /* Ajusta a imagem dentro do círculo */
-    filter: blur(0.7px);
+    width: 300px; /* Largura da imagem */
+    height: 300px; /* Altura da imagem */
+    border-radius: 5%; /* Borda levemente arredondada */
+    object-fit: cover; /* Ajusta a imagem dentro do contêiner */
+    filter: blur(2px); /* Desfoque inicial */
+    transform: scale(0.9); /* Leve redução inicial */
 }
 
-.imagem-arroz.mostrar, .imagem-feijao.mostrar {
+.imagem-arroz.mostrar, .imagem-feijao.mostrar, .imagem-arroz-feijao.mostrar {
     opacity: 1;
+    filter: blur(0); /* Remove o desfoque ao exibir */
+    transform: scale(1); /* Retorna ao tamanho original */
 }
 
-.imagem-arroz:hover, .imagem-feijao:hover {
-    filter: blur(0px);
-    transform: scale(1.10);
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+.imagem-arroz:hover, .imagem-feijao:hover, .imagem-arroz-feijao:hover {
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    filter: brightness(1.05); /* Aumenta o brilho ao passar o mouse */
 }
 
 @keyframes pixelatedFadeIn {
@@ -74,10 +78,5 @@
     .imagem-doacao {
         width: 100%;
         max-width: 300px;
-    }
-
-    .imagem-arroz, .imagem-feijao {
-        width: 250px; /* Largura da imagem */
-        height: 250px; /* Altura da imagem */
     }
 }

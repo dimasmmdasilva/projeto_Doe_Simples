@@ -109,20 +109,23 @@ function configurarSlidesAtividades() {
 
 // Função para configurar a animação da seção de doações
 function configurarAnimacaoDoacoes() {
-    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg).";
+    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs), feijão (1kg) * com validade acima de 6 meses *";
     const fraseElemento = document.querySelector('.frase-animada');
     const imagemArroz = document.querySelector('.imagem-arroz');
     const imagemFeijao = document.querySelector('.imagem-feijao');
+    const imagemArrozComFeijao = document.querySelector('.imagem-arroz-feijao');
     let index = 0;
 
     function escreverFrase() {
         if (index < frase.length) {
             fraseElemento.innerHTML += frase.charAt(index);
             index++;
-            setTimeout(escreverFrase, 100); // 100ms entre cada letra
+            setTimeout(escreverFrase, 50); // 50ms entre cada letra para uma escrita mais fluida
         } else {
-            imagemArroz.classList.add('mostrar');
-            imagemFeijao.classList.add('mostrar');
+            // Exibe as imagens em sequência com pequenos intervalos
+            setTimeout(() => imagemArroz.classList.add('mostrar'), 500);
+            setTimeout(() => imagemFeijao.classList.add('mostrar'), 1000);
+            setTimeout(() => imagemArrozComFeijao.classList.add('mostrar'), 1500);
         }
     }
 
@@ -135,7 +138,7 @@ function configurarAnimacaoDoacoes() {
         });
     }, { threshold: 0.5 });
 
-    observer.observe(document.querySelector('#doacoes'));
+    observer.observe(document.querySelector('.doacoes'));
 }
 
 // Função executada quando a página é carregada
