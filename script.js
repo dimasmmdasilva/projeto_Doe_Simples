@@ -109,7 +109,7 @@ function configurarSlidesAtividades() {
 
 // Função para configurar a animação da seção de doações
 function configurarAnimacaoDoacoes() {
-    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs), feijão (1kg) * com validade acima de 6 meses *";
+    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg) * com validade acima de 6 meses *";
     const fraseElemento = document.querySelector('.frase-animada');
     const imagemArroz = document.querySelector('.imagem-arroz');
     const imagemFeijao = document.querySelector('.imagem-feijao');
