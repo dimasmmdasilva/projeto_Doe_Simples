@@ -123,8 +123,8 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     const carousel = document.querySelector('#carousel');
     if (carousel) {
-        const carouselBottom = carousel.offsetTop + carousel.offsetHeight;
-        if (window.scrollY >= carouselBottom) {
+        const carouselMiddle = carousel.offsetTop + (carousel.offsetHeight / 2);
+        if (window.scrollY >= carouselMiddle) {
             header.classList.add('reduzido');
         } else {
             header.classList.remove('reduzido');

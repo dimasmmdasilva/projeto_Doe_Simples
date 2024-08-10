@@ -30,6 +30,7 @@ header {
 
 header .titulo {
     transition: font-size 0.3s ease-in-out;
+    font-weight: bolder;
 }
 
 header.reduzido {
@@ -38,10 +39,6 @@ header.reduzido {
 
 header.reduzido .titulo {
     font-size: 20px;
-}
-
-.titulo {
-    font-weight: bolder;
 }
 
 /* Carousel */
