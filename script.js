@@ -107,12 +107,43 @@ function configurarSlidesAtividades() {
     showSlides(); // Inicia o slideshow
 }
 
+// Função para configurar a animação da seção de doações
+function configurarAnimacaoDoacoes() {
+    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg).";
+    const fraseElemento = document.querySelector('.frase-animada');
+    const imagemArroz = document.querySelector('.imagem-arroz');
+    const imagemFeijao = document.querySelector('.imagem-feijao');
+    let index = 0;
+
+    function escreverFrase() {
+        if (index < frase.length) {
+            fraseElemento.innerHTML += frase.charAt(index);
+            index++;
+            setTimeout(escreverFrase, 100); // 100ms entre cada letra
+        } else {
+            imagemArroz.classList.add('mostrar');
+            imagemFeijao.classList.add('mostrar');
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                escreverFrase();
+                observer.disconnect(); // Para a observação após a animação começar
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('#doacoes'));
+}
+
 // Função executada quando a página é carregada
 window.onload = function() {
     carregarSection('sections/doe_simples/doe_simples.html', 'sections/doe_simples/doe_simples.css', 'doe_simples', configurarDoeSimplesObserver);
     carregarSection('sections/ong_semente/ong_semente.html', 'sections/ong_semente/ong_semente.css', 'ong_semente', configurarOngSementeObserver);
     carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades', configurarSlidesAtividades);
-    carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes');
+    carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes', configurarAnimacaoDoacoes);
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta');
     carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha');
     carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados');

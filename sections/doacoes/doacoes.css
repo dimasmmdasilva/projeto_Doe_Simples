@@ -1,7 +1,7 @@
-.doacoes { 
+.doacoes {
     background-color: #f9edc6;
-    height: auto;
-    width: auto;
+    padding: 60px 0;
+    text-align: center;
 }
 
 .doacoes .container {
@@ -9,100 +9,75 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto;
-    width: auto;
 }
 
 .doacoes .titulo {
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+.frase-animada {
+    font-size: 24px;
     text-align: center;
-    padding: 60px;
-    margin-top: 40px;
+    margin-bottom: 20px;
+    min-height: 40px;
 }
 
-.doacoes .row > div {
-    margin-bottom: 120px;
+.imagens-doacao {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as imagens */
 }
 
-.doacoes .card {
-    height: 420px;
+.imagem-arroz, .imagem-feijao {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin: 25px;
+    width: 350px; /* Largura da imagem */
+    height: 350px; /* Altura da imagem */
+    border-radius: 50%; /* Formato circular */
+    object-fit: cover; /* Ajusta a imagem dentro do círculo */
+    filter: blur(0.7px);
 }
 
-.doacoes .card-img-top {
-    height: 320px;
+.imagem-arroz.mostrar, .imagem-feijao.mostrar {
+    opacity: 1;
 }
 
-.doacoes .card-body {
-    padding: 5px;
-    text-align: center;
+.imagem-arroz:hover, .imagem-feijao:hover {
+    filter: blur(0px);
+    transform: scale(1.10);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.doacoes .card-text {
-    margin-top: 10px;
-}
-
-.doacoes .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-@media (max-width: 1200px) {
-    .doacoes {
-        height: auto;
+@keyframes pixelatedFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.5);
     }
-    .doacoes .card {
-        width: 450px;
-        margin: 30px auto;
-        margin-bottom: 30px;
-        height: 400px;
-    }
-    .doacoes .card-img-top {
-        height: 320px;
-    }
-    .doacoes .titulo {
-        padding: 14px;
-    }
-    .doacoes .card-text {
-        font-size: 14px;
-    }
-    .doacoes .row > div {
-        flex: 0 0 100%;
-        width: 80%;
-        height: 80%;
-        margin-bottom: 20px;
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
     }
 }
 
 @media (max-width: 768px) {
-    .doacoes {
-        height: auto;
+    .frase-animada {
+        font-size: 22px;
     }
-    .doacoes .card {
-        width: 100%;
-        margin: 20px auto;
-        margin-bottom: 30px;
-        height: auto;
-    }
-    .doacoes .card-img-top {
-        height: 240px;
-    }
-    .doacoes .titulo {
-        padding: 20px;
-        margin-top: 60px;
-    }
-    .doacoes .card-text {
-        font-size: 14px;
-    }
-    .doacoes .row > div {
-        flex: 0 0 100%;
-        width: 80%;
-        height: 80%;
-        margin-bottom: 20px;
-    }
-    .doacoes .row {
-        display: flex;
+
+    .imagens-doacao {
         flex-direction: column;
-        align-items: center;
-        margin-bottom: 60px;
+    }
+
+    .imagem-doacao {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .imagem-arroz, .imagem-feijao {
+        width: 250px; /* Largura da imagem */
+        height: 250px; /* Altura da imagem */
     }
 }

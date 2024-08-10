@@ -112,9 +112,16 @@ footer {
     background-color: #74b9ff;
     text-align: center;
     padding: 20px;
+    height: 200px;
+    position: relative; /* Necessário para que o h3 seja posicionado em relação ao footer */
 }
 
 footer h3 {
+    padding: 12px;
     font-size: 14px;
     font-weight: bolder;
+    position: absolute;
+    bottom: 0; /* Alinha na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para que o h3 fique perfeitamente centralizado */
 }
