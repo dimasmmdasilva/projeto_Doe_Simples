@@ -109,7 +109,7 @@ function configurarSlidesAtividades() {
 
 // Função para configurar a animação da seção de doações
 function configurarAnimacaoDoacoes() {
-    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg) * com validade acima de 6 meses *";
+    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg) *com validade acima de 6 meses*";
     const fraseElemento = document.querySelector('.frase-animada');
     const imagemArroz = document.querySelector('.imagem-arroz');
     const imagemFeijao = document.querySelector('.imagem-feijao');
@@ -179,7 +179,7 @@ function configurarAnimacaoPontoColeta() {
 
 // Função para configurar a animação da seção "vaquinha"
 function configurarAnimacaoVaquinha() {
-    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno duplo elétrico (R$4000) para a instituição Semente Esperança * copie a chave-pix ao clicar no botão abaixo *";
+    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno duplo elétrico (R$4000) para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo*";
     const fraseElemento = document.querySelector('.vaquinha .frase-animada');
     let index = 0;
 
