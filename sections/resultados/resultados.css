@@ -28,6 +28,8 @@
     }
     .resultados .container {
         height: auto;
+    }
+    .resultados .titulo {
         width: 200px;
     }
 }
