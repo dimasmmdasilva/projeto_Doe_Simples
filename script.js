@@ -141,7 +141,7 @@ function configurarAnimacaoDoacoes() {
 
 // Função para animar seção ponto_coleta
 function configurarAnimacaoPontoColeta() {
-    const frase = "No pátio principal em frente à área de alimentação da Universidade Salesiana de São Paulo, unidade São José, Campinas. Agradecemos a participação na campanha de doações, obrigado por ajudar a cultivar a solidariedade em nossa sociedade.";
+    const frase = "No pátio principal em frente à área de alimentação da Universidade Salesiana de São Paulo,d Campinas, obrigado por ajudar a cultivar a solidariedade em nossa sociedade.";
     const fraseElemento = document.querySelector('.ponto_coleta .frase-animada');
     
     if (!fraseElemento) {
