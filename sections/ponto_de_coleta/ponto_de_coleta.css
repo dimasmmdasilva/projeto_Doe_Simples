@@ -17,6 +17,7 @@
 }
 
 .ponto_coleta .frase-animada {
+    padding: 20px;
     font-size: 22px;
     text-align: justify;
     max-width: 600px;
@@ -57,7 +58,7 @@
     .ponto_coleta .frase-animada {
         font-size: 20px;
         padding: 20px;
-        width: 400px;
+        width: 300px;
     }
 
     .ponto_coleta iframe {
