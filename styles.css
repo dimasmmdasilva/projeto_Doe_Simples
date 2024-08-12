@@ -119,8 +119,25 @@ footer {
     background-color: #74b9ff;
     text-align: center;
     padding: 20px;
-    height: 200px;
-    position: relative; /* Necessário para que o h3 seja posicionado em relação ao footer */
+    height: 150px;
+    position: relative;
+}
+
+footer .footer-content {
+    position: relative;
+    height: 100%;
+}
+
+footer .social-icon {
+    color: white;
+    font-size: 40px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+footer .social-icon:hover {
+    color: #4d21ff; /* Cor ao passar o mouse */
 }
 
 footer h3 {
