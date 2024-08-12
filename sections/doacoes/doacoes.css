@@ -79,6 +79,6 @@
 
     .imagens-doacao {
         flex-direction: column;
-        width: 50%;
+        max-width: 300px;
     }
 }
