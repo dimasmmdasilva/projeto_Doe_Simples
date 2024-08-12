@@ -45,6 +45,10 @@
     width: 500px;
 }
 
+.vaquinha button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
 .vaquinha img {
     width: 500px;
     height: 500px;
