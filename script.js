@@ -113,7 +113,6 @@ function configurarAnimacaoDoacoes() {
     const fraseElemento = document.querySelector('.frase-animada');
     const imagemArroz = document.querySelector('.imagem-arroz');
     const imagemFeijao = document.querySelector('.imagem-feijao');
-    const imagemArrozComFeijao = document.querySelector('.imagem-arroz-feijao');
     let index = 0;
 
     function escreverFrase() {
@@ -125,7 +124,6 @@ function configurarAnimacaoDoacoes() {
             // Exibe as imagens em sequência com pequenos intervalos
             setTimeout(() => imagemArroz.classList.add('mostrar'), 500);
             setTimeout(() => imagemFeijao.classList.add('mostrar'), 1000);
-            setTimeout(() => imagemArrozComFeijao.classList.add('mostrar'), 1500);
         }
     }
 
@@ -141,14 +139,87 @@ function configurarAnimacaoDoacoes() {
     observer.observe(document.querySelector('.doacoes'));
 }
 
+// Função para animar seção ponto_coleta
+function configurarAnimacaoPontoColeta() {
+    const frase = "No pátio principal em frente à área de alimentação da Universidade Salesiana de São Paulo, unidade São José, Campinas. Agradecemos a participação na campanha de doações, obrigado por ajudar a cultivar a solidariedade em nossa sociedade.";
+    const fraseElemento = document.querySelector('.ponto_coleta .frase-animada');
+    
+    if (!fraseElemento) {
+        console.error('Elemento .frase-animada não encontrado.');
+        return;
+    }
+
+    let index = 0;
+
+    function escreverFrasePontoColeta() {
+        console.log('Função escreverFrasePontoColeta chamada');  // Adicionado para debug
+        if (index < frase.length) {
+            fraseElemento.innerHTML += frase.charAt(index);
+            index++;
+            setTimeout(escreverFrasePontoColeta, 50);
+        } else {
+            // Exibir a frase completamente
+            fraseElemento.classList.add('mostrar');
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('Elemento visível, iniciando animação');  // Adicionado para debug
+                escreverFrasePontoColeta();
+                document.querySelector('.ponto_coleta iframe').classList.add('mostrar');
+                observer.disconnect(); // Para a observação após a animação começar
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.ponto_coleta'));
+}
+
+// Função para configurar a animação da seção "vaquinha"
+function configurarAnimacaoVaquinha() {
+    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno duplo elétrico (R$4000) para a instituição Semente Esperança * copie a chave-pix ao clicar no botão abaixo *";
+    const fraseElemento = document.querySelector('.vaquinha .frase-animada');
+    let index = 0;
+
+    function escreverFrasePix() {
+        if (index < frasePix.length) {
+            fraseElemento.innerHTML += frasePix.charAt(index);
+            index++;
+            setTimeout(escreverFrasePix, 50); // 50ms entre cada letra para uma escrita suave
+        }
+    }
+
+    // Observer para iniciar a animação apenas quando a seção estiver visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                escreverFrasePix();
+                observer.disconnect(); // Para a observação após a animação começar
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.vaquinha'));
+}
+
+// Função para copiar o texto do botão para a área de transferência
+function copiarParaAreaDeTransferencia() {
+    const textoParaCopiar = document.getElementById('copiarPix').innerText;
+    navigator.clipboard.writeText(textoParaCopiar).then(() => {
+        alert("Texto copiado para a área de transferência!");
+    });
+}
+
 // Função executada quando a página é carregada
 window.onload = function() {
     carregarSection('sections/doe_simples/doe_simples.html', 'sections/doe_simples/doe_simples.css', 'doe_simples', configurarDoeSimplesObserver);
     carregarSection('sections/ong_semente/ong_semente.html', 'sections/ong_semente/ong_semente.css', 'ong_semente', configurarOngSementeObserver);
     carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades', configurarSlidesAtividades);
     carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes', configurarAnimacaoDoacoes);
-    carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta');
-    carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha');
+    carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta', configurarAnimacaoPontoColeta);
+    carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', configurarAnimacaoVaquinha);
     carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados');
 };
 

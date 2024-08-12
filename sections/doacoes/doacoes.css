@@ -18,9 +18,13 @@
 
 .frase-animada {
     font-size: 24px;
-    text-align: center;
+    text-align: justify; /* Garante que o texto fique justificado */
     margin-bottom: 20px;
     min-height: 40px;
+    width: 620px;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .imagens-doacao {
@@ -30,7 +34,7 @@
     justify-content: center; /* Centraliza as imagens */
 }
 
-.imagem-arroz, .imagem-feijao, .imagem-arroz-feijao {
+.imagem-arroz, .imagem-feijao {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
     margin: 25px;
@@ -42,13 +46,13 @@
     transform: scale(0.9); /* Leve redução inicial */
 }
 
-.imagem-arroz.mostrar, .imagem-feijao.mostrar, .imagem-arroz-feijao.mostrar {
+.imagem-arroz.mostrar, .imagem-feijao.mostrar {
     opacity: 1;
     filter: blur(0); /* Remove o desfoque ao exibir */
     transform: scale(1); /* Retorna ao tamanho original */
 }
 
-.imagem-arroz:hover, .imagem-feijao:hover, .imagem-arroz-feijao:hover {
+.imagem-arroz:hover, .imagem-feijao:hover {
     transform: scale(1.05); /* Leve aumento ao passar o mouse */
     filter: brightness(1.05); /* Aumenta o brilho ao passar o mouse */
 }
@@ -68,7 +72,9 @@
 
 @media (max-width: 768px) {
     .frase-animada {
-        font-size: 22px;
+        font-size: 20px;
+        width: 400px;
+        text-align: justify;
     }
 
     .imagens-doacao {

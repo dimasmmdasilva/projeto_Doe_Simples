@@ -1,81 +1,94 @@
-.vaquinha { 
+.vaquinha {
     background-color: #f9edc6;
     height: auto;
-    width: auto;
+    padding: 20px;
 }
 
 .vaquinha .container {
-    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .vaquinha .titulo {
     text-align: center;
-    padding: 20px;
-    margin-top: 70px;
-    margin-bottom: 30px;
+    padding: 20px 0;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
-.vaquinha p {
-    text-align: justify;
+.vaquinha .frase-animada {
+    padding: 20px;
     font-size: 22px;
-    padding: 5px;
-    margin: 25px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+    text-align: justify;
+    height: 150px; /* Define uma altura fixa para evitar o movimento do botão */
+    overflow: hidden; /* Evita que o texto quebre o layout */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.vaquinha button {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 30px; /* Espaçamento superior em relação à frase */
+    margin-bottom: 40px; /* Espaçamento inferior em relação à imagem */
+    position: relative;
+    z-index: 1;
+    display: block; /* Adicionado para garantir que o botão seja tratado como um bloco */
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
 }
 
 .vaquinha img {
     width: 500px;
     height: 500px;
     border-style: solid;
-    margin-bottom: 80px;
+    margin-bottom: 20px; /* Espaçamento inferior entre a imagem e o final do container */
 }
 
 @media (max-width: 1200px) {
     .vaquinha .container {
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .vaquinha .row {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-    .vaquinha p {
-        text-align: justify;
-        font-size: 16px;
-        padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 60px;
-    }
-    .vaquinha .col-md-5, .vaquinha .col-md-7 {
+    .vaquinha {
         width: 100%;
         display: flex;
         justify-content: center;
+        text-align: center;
+    }
+    .vaquinha .titulo {
+        text-align: center;
+    }
+    .vaquinha .frase-animada {
+        text-align: center;
+        min-height: 60px;
     }
 }
 
 @media (max-width: 768px) {
-    .vaquinha .titulo {
-        text-align: center;
+    .vaquinha .frase-animada {
+        font-size: 20px;
         padding: 20px;
-        margin-top: 60px;
-        margin-bottom: 20px;
-    }
-    .vaquinha p {
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 400px;
+        height: 200px;
         text-align: justify;
-        font-size: 16px;
-        padding: 15px;
-        margin-top: 10px;
-        margin-bottom: 60px;
     }
     .vaquinha img {
         width: 80%;
         height: auto;
-        border-style: solid;
         margin-bottom: 20px;
+    }
+    .vaquinha button {
+        width: 80%;
     }
 }

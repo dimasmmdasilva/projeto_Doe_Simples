@@ -1,99 +1,67 @@
-.ponto_coleta { 
+.ponto_coleta {
     background-color: #9dcefe;
-    height: 750px;
+    padding: 60px 0;
+    text-align: center;
 }
 
 .ponto_coleta .container {
-    height: 750px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.ponto_coleta .row {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.ponto_coleta h3 {
-    width: 400px;
-    padding: 10px;
+.ponto_coleta .titulo {
     margin-bottom: 40px;
+    margin-top: 60px;
 }
 
-.ponto_coleta p {
-    text-align: justify;
+.ponto_coleta .frase-animada {
     font-size: 22px;
-    padding: 10px;
-    width: 600px;
+    text-align: justify;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 1; /* Temporariamente forçado a 1 para debug */
+    transition: opacity 2s ease-in-out;
+    color: #000;
+}
+
+.ponto_coleta .frase-animada.mostrar {
+    opacity: 1;
 }
 
 .ponto_coleta iframe {
-    width: 550px;
+    width: 600px;
     height: 550px;
-    padding: 20px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    border: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.ponto_coleta iframe.mostrar {
+    opacity: 1;
 }
 
 @media (max-width: 1200px) {
-    .ponto_coleta { 
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .ponto_coleta .frase-animada {
+        font-size: 22px;
     }
-    .ponto_coleta .container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .ponto_coleta .row {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-    .ponto_coleta h3 {
-        margin: 20px;
-        margin-top: 80px;
-    }
-    .ponto_coleta p {
-        text-align: justify;
-        font-size: 16px;
-        margin: 20px;
-        width: auto;
-    }
+
     .ponto_coleta iframe {
-        margin: 0 0 60px;
-        width: 100%;
-        height: 500px;
+        width: 550px;
+        height: 400px;
     }
 }
 
 @media (max-width: 768px) {
-    .ponto_coleta { 
-        height: auto;
-        overflow-x: hidden;
-    }
-    .ponto_coleta .container {
-        height: auto;
-    }
-    .ponto_coleta h3 {
-        padding: 30px;
-        margin-top: 60px;
-    }
-    .ponto_coleta p {
-        text-align: justify;
-        font-size: 16px;
+    .ponto_coleta .frase-animada {
+        font-size: 20px;
         padding: 20px;
+        width: 400px;
     }
+
     .ponto_coleta iframe {
-        margin: 20px;
-        width: 90%;
-        height: 300px;
-        margin-bottom: 60px;
+        width: 100%;
+        height: 350px;
     }
 }

@@ -1,5 +1,5 @@
 * {
-    font-family: "Prata", serif;
+    font-family: "Prata", Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
     margin: 0;
@@ -73,6 +73,13 @@ header.reduzido .titulo {
         width: 50%;
         height: 20%;
         top: 80%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .carousel {
+        margin-top: 70px;
+        height: 100%;
     }
 }
 
