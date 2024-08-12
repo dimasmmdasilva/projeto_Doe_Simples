@@ -149,3 +149,10 @@ footer h3 {
     left: 50%; /* Centraliza horizontalmente */
     transform: translateX(-50%); /* Ajusta para que o h3 fique perfeitamente centralizado */
 }
+
+@media (max-width: 768px) {
+    footer h3 {
+        padding: 12px;
+        font-size: 10px;
+    }
+}
