@@ -212,6 +212,33 @@ function copiarParaAreaDeTransferencia() {
     });
 }
 
+// Função para iniciar o cronômetro regressivo
+function iniciarContagemRegressiva() {
+    // Defina a data de término da campanha (31 de outubro de 2024, 23:59:59)
+    const dataFimCampanha = new Date('October 31, 2024 23:59:59').getTime();
+
+    // Atualiza o cronômetro a cada segundo
+    const intervalo = setInterval(() => {
+        const agora = new Date().getTime();
+        const distancia = dataFimCampanha - agora;
+
+        // Cálculo dos dias, horas, minutos e segundos restantes
+        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        // Exibe a contagem regressiva no elemento com id "countdown"
+        document.getElementById('countdown').innerHTML = `<b>${dias}dias ${horas}horas ${minutos}minutos ${segundos}s restantes para o término da campanha...</b>`;
+
+        // Se a contagem regressiva terminar, exibe uma mensagem
+        if (distancia < 0) {
+            clearInterval(intervalo);
+            document.getElementById('countdown').innerHTML = "<b>Campanha encerrada! Obrigado por sua participação.</b>";
+        }
+    }, 1000);
+}
+
 // Função executada quando a página é carregada
 window.onload = function() {
     carregarSection('sections/doe_simples/doe_simples.html', 'sections/doe_simples/doe_simples.css', 'doe_simples', configurarDoeSimplesObserver);
@@ -220,7 +247,7 @@ window.onload = function() {
     carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes', configurarAnimacaoDoacoes);
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta', configurarAnimacaoPontoColeta);
     carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', configurarAnimacaoVaquinha);
-    carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados');
+    carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados', iniciarContagemRegressiva);
 };
 
 // Função para alterar o tamanho do header ao rolar a página

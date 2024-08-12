@@ -13,22 +13,14 @@
 
 .resultados .titulo {
     text-align: center;
-    padding: 20px;
-    width: 500px;
-    margin: 320px;
+    padding: 200px;
 }
 
-.resultados p {
-    text-align: justify;
-    font-size: 22px;
-    padding: 40px;
+.resultados #countdown {
+    font-size: 24px;
+    color: #333;
 }
 
-.resultados img {
-    max-width: 100%;
-    height: auto;
-    padding: 40px;
-}
 
 @media (max-width: 768px) {
     .resultados {
@@ -36,10 +28,5 @@
     }
     .resultados .container {
         height: auto;
-    }
-    .resultados .titulo h3 {
-        text-align: center;
-        font-size: 16px;
-        margin: 50px;
     }
 }
