@@ -85,7 +85,7 @@
 
 .progress-bar {
     height: 100%;
-    background-color: #74b9ff;
+    background-color: #70ff03;
     width: 0;
     transition: width 0.5s;
 }
@@ -149,6 +149,7 @@
     .vaquinha .progress-bar-container {
         margin-top: 20px;
         margin-bottom: 10px;
+        width: 80%;
     }
     .vaquinha #progressText {
         margin-top: 10px;
