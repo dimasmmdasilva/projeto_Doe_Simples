@@ -13,8 +13,8 @@
 .vaquinha .titulo {
     text-align: center;
     padding: 20px 0;
-    margin-top: 60px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .vaquinha .frase-animada {
@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        height: 240px;
+        height: 260px;
         font-size: 20px;
         padding: 20px;
         text-align: center;
