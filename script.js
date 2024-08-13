@@ -181,7 +181,7 @@ function configurarAnimacaoPontoColeta() {
 function copiarParaAreaDeTransferencia() {
     const textoParaCopiar = document.getElementById('copiarPix').innerText;
     navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        alert("Texto copiado para a área de transferência!");
+        alert("Chave-Pix copiada para transferência!");
     });
 }
 
