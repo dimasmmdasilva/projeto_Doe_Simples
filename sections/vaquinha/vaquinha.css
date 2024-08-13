@@ -22,7 +22,7 @@
     font-size: 22px;
     margin-bottom: 20px;
     text-align: justify;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        height: 220px;
+        height: 240px;
         font-size: 18px;
         padding: 20px;
         text-align: center;
