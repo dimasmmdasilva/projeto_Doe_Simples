@@ -177,6 +177,14 @@ function configurarAnimacaoPontoColeta() {
     observer.observe(document.querySelector('.ponto_coleta'));
 }
 
+// Função para copiar o texto do botão para a área de transferência
+function copiarParaAreaDeTransferencia() {
+    const textoParaCopiar = document.getElementById('copiarPix').innerText;
+    navigator.clipboard.writeText(textoParaCopiar).then(() => {
+        alert("Texto copiado para a área de transferência!");
+    });
+}
+
 // Função para configurar a animação da seção "vaquinha"
 function configurarAnimacaoVaquinha() {
     const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno duplo elétrico (R$4000) para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo*";
@@ -187,16 +195,15 @@ function configurarAnimacaoVaquinha() {
         if (index < frasePix.length) {
             fraseElemento.innerHTML += frasePix.charAt(index);
             index++;
-            setTimeout(escreverFrasePix, 50); // 50ms entre cada letra para uma escrita suave
+            setTimeout(escreverFrasePix, 50); 
         }
     }
 
-    // Observer para iniciar a animação apenas quando a seção estiver visível
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 escreverFrasePix();
-                observer.disconnect(); // Para a observação após a animação começar
+                observer.disconnect();
             }
         });
     }, { threshold: 0.5 });
@@ -204,11 +211,43 @@ function configurarAnimacaoVaquinha() {
     observer.observe(document.querySelector('.vaquinha'));
 }
 
-// Função para copiar o texto do botão para a área de transferência
-function copiarParaAreaDeTransferencia() {
-    const textoParaCopiar = document.getElementById('copiarPix').innerText;
-    navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        alert("Texto copiado para a área de transferência!");
+// Função para lidar com a doação e atualizar a barra de progresso
+function configurarBotoesDoacao() {
+    const donationButtons = document.querySelectorAll('.donation-btn');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    let totalAmount = 0;
+    const goalAmount = 4000;
+
+    // Verificação básica para garantir que os botões foram encontrados
+    if (donationButtons.length === 0) {
+        console.error('Nenhum botão de doação encontrado.');
+        return; // Interrompe a execução se não houver botões
+    } else {
+        console.log('Botões de doação encontrados:', donationButtons.length);
+    }
+
+    donationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const donationValue = parseInt(this.getAttribute('data-value'));
+
+            // Verifique se o valor da doação está sendo capturado corretamente
+            console.log('Valor da doação:', donationValue);
+
+            const userConfirmed = confirm(`Você confirma que fez a doação de R$ ${donationValue}?`);
+
+            if (userConfirmed) {
+                totalAmount += donationValue;
+                const progressPercentage = (totalAmount / goalAmount) * 100;
+
+                progressBar.style.width = progressPercentage + '%';
+                progressText.textContent = `Total arrecadado: R$ ${totalAmount} de R$ 4000`;
+
+                if (totalAmount >= goalAmount) {
+                    alert('Parabéns! O valor total foi arrecadado.');
+                }
+            }
+        });
     });
 }
 
@@ -246,7 +285,10 @@ window.onload = function() {
     carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades', configurarSlidesAtividades);
     carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes', configurarAnimacaoDoacoes);
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta', configurarAnimacaoPontoColeta);
-    carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', configurarAnimacaoVaquinha);
+    carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', function() {
+        configurarAnimacaoVaquinha();
+        configurarBotoesDoacao(); // Configurar os botões de doação após a section "vaquinha" ser carregada
+    });
     carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados', iniciarContagemRegressiva);
 };
 

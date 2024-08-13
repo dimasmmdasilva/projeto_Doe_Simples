@@ -1,16 +1,26 @@
 <section class="vaquinha">
     <div class="container">
-                <div class="titulo">
-                    <h2><b>Doação Pix</b></h2>
-                </div>
-                <div>
-                    <p class="frase-animada"></p>
-                    <button id="copiarPix" onclick="copiarParaAreaDeTransferencia()">
-                        comunica.semente@gmail.com
-                    </button>
-                </div>
-                <div>
-                    <img src="./images/forno.jpeg" alt="Forno elétrico" class="img-fluid">
-                </div>
+        <div class="titulo">
+            <h2><b>Doação Pix</b></h2>
+        </div>
+        <div>
+            <p class="frase-animada"></p>
+            <button id="copiarPix" onclick="copiarParaAreaDeTransferencia()">
+                comunica.semente@gmail.com
+            </button>
+        </div>
+        <div class="donation-buttons">
+            <button class="donation-btn" data-value="5">R$ 5</button>
+            <button class="donation-btn" data-value="10">R$ 10</button>
+            <button class="donation-btn" data-value="15">R$ 15</button>
+            <button class="donation-btn" data-value="20">R$ 20</button>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="progressText">Total arrecadado: R$ 0 de R$ 4000</p>
+        <div>
+            <img src="./images/forno.jpeg" alt="Forno elétrico" class="img-fluid">
+        </div>
     </div>
 </section>

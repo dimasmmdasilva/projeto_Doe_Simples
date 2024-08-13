@@ -22,8 +22,8 @@
     font-size: 22px;
     margin-bottom: 20px;
     text-align: justify;
-    height: 150px; /* Define uma altura fixa para evitar o movimento do botão */
-    overflow: hidden; /* Evita que o texto quebre o layout */
+    height: 150px;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
@@ -35,11 +35,11 @@
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 30px; /* Espaçamento superior em relação à frase */
-    margin-bottom: 40px; /* Espaçamento inferior em relação à imagem */
+    margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
     z-index: 1;
-    display: block; /* Adicionado para garantir que o botão seja tratado como um bloco */
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
@@ -49,11 +49,58 @@
     background-color: rgb(255, 255, 255);
 }
 
+.donation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.donation-btn {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #74b9ff;
+    color: #000000;
+    border-radius: 5px;
+    flex: 1; /* Para que todos os botões fiquem com o mesmo tamanho */
+    max-width: 120px; /* Limita o tamanho máximo dos botões */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.donation-btn:hover {
+    background-color: #188bff !important;
+    color: #fff !important;
+}
+
+.progress-bar-container {
+    margin-top: 10px;
+    background-color: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 25px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #74b9ff;
+    width: 0;
+    transition: width 0.5s;
+}
+
+#progressText {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
 .vaquinha img {
     width: 500px;
     height: 500px;
     border-style: solid;
-    margin-bottom: 20px; /* Espaçamento inferior entre a imagem e o final do container */
+    margin-bottom: 20px;
 }
 
 @media (max-width: 1200px) {
@@ -78,14 +125,12 @@
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        font-size: 20px;
+        height: 220px;
+        font-size: 18px;
         padding: 20px;
         text-align: center;
         margin-left: 10px;
         margin-right: 10px;
-        width: 300px;
-        height: 300px;
-        text-align: justify;
     }
     .vaquinha img {
         width: 85%;
@@ -94,7 +139,15 @@
     }
     .vaquinha button {
         margin-top: 20px;
-        width: 80%;
+        width: 100%;
         font-size: 16px;
     }
+    .vaquinha .donation-btn {
+        font-size: 14px;
+        width: 80px;
+        padding: 8px;
+    }
+    .vaquinha .progress-bar-container {
+        margin-top: 20px;
+        margin-bottom: 10px;
 }
