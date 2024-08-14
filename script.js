@@ -187,7 +187,7 @@ function copiarParaAreaDeTransferencia() {
 
 // Função para configurar a animação da seção "vaquinha"
 function configurarAnimacaoVaquinha() {
-    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno elétrico para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo, depois confirme sua doação nos botões com valores*";
+    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo elétrico para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo, depois confirme sua doação nos botões com valores*";
     const fraseElemento = document.querySelector('.vaquinha .frase-animada');
     let index = 0;
 
