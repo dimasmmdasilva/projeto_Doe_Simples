@@ -23,6 +23,20 @@ function carregarSection(urlHtml, urlCss, elementoDestino, callback) {
     console.log(`${urlCss} carregado.`);
 }
 
+// Função para alterar o tamanho do header ao rolar a página
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    const carousel = document.querySelector('#carousel');
+    if (carousel) {
+        const carouselMiddle = carousel.offsetTop + (carousel.offsetHeight / 2);
+        if (window.scrollY >= carouselMiddle) {
+            header.classList.add('reduzido');
+        } else {
+            header.classList.remove('reduzido');
+        }
+    }
+});
+
 // Função para configurar as animações na seção "doe_simples"
 function configurarDoeSimplesObserver() {
     const doeSimplesSection = document.querySelector('#doe_simples');
@@ -234,24 +248,18 @@ function configurarProgressBar() {
 // Função para carregar comentários da API
 function loadComments() {
     const commentsDiv = document.getElementById('comments');
-    fetch('https://nome-do-seu-app.herokuapp.com/api/comments/')
-        .then(response => response.json())
+    fetch('https://projeto-doe-simples-backend.onrender.com/api/comments/')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             commentsDiv.innerHTML = ''; // Limpa a div antes de adicionar novos comentários
             data.forEach(displayComment);
         })
         .catch(error => console.error('Erro ao carregar comentários:', error));
-}
-
-// Função para exibir um comentário na página
-function displayComment(comment) {
-    const commentElement = document.createElement('div');
-    commentElement.classList.add('comment');
-    commentElement.innerHTML = `
-        <p class="username">${comment.username} <small>(${new Date(comment.created_at).toLocaleString()})</small></p>
-        <p>${comment.comment}</p>
-    `;
-    document.getElementById('comments').appendChild(commentElement);
 }
 
 // Função para lidar com o envio de comentários
@@ -268,14 +276,19 @@ function configurarFormularioComentarios() {
             const newComment = { username, comment };
 
             // Enviar o novo comentário para a API
-            fetch('https://nome-do-seu-app.herokuapp.com/api/comments/', {
+            fetch('https://projeto-doe-simples-backend.onrender.com/api/comments/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(newComment)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erro na requisição: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 displayComment(data);  // Exibir o novo comentário na página
                 commentForm.reset();    // Limpar o formulário
@@ -329,17 +342,3 @@ window.onload = function() {
         configurarFormularioComentarios();
     });
 };
-
-// Função para alterar o tamanho do header ao rolar a página
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    const carousel = document.querySelector('#carousel');
-    if (carousel) {
-        const carouselMiddle = carousel.offsetTop + (carousel.offsetHeight / 2);
-        if (window.scrollY >= carouselMiddle) {
-            header.classList.add('reduzido');
-        } else {
-            header.classList.remove('reduzido');
-        }
-    }
-});
