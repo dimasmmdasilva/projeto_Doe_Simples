@@ -18,11 +18,9 @@
 }
 
 .vaquinha .frase-animada {
-    padding: 20px;
     font-size: 22px;
-    margin-bottom: 20px;
     text-align: justify;
-    height: 200px;
+    height: 150px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -35,8 +33,7 @@
     font-weight: bold;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     position: relative;
     z-index: 1;
     display: block;
@@ -47,30 +44,6 @@
 
 .vaquinha button:hover {
     background-color: rgb(255, 255, 255);
-}
-
-.donation-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Espaçamento entre os botões */
-}
-
-.donation-btn {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #74b9ff;
-    color: #000000;
-    border-radius: 5px;
-    flex: 1; /* Para que todos os botões fiquem com o mesmo tamanho */
-    max-width: 120px; /* Limita o tamanho máximo dos botões */
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.donation-btn:hover {
-    background-color: #188bff !important;
-    color: #fff !important;
 }
 
 .progress-bar-container {
@@ -93,6 +66,7 @@
 #progressText {
     margin-top: 10px;
     font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .vaquinha img {

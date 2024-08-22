@@ -181,13 +181,13 @@ function configurarAnimacaoPontoColeta() {
 function copiarParaAreaDeTransferencia() {
     const textoParaCopiar = document.getElementById('copiarPix').innerText;
     navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        alert("Chave-Pix copiada para transferência!");
+        alert("Chave-pix copiada!");
     });
 }
 
 // Função para configurar a animação da seção "vaquinha"
 function configurarAnimacaoVaquinha() {
-    const frasePix = "Doe via Pix para contribuir para a aquisição de um novo forno para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo, depois confirme sua doação nos botões com valores*";
+    const frasePix = "Doe simples com pix e contribua para a aquisição de um novo forno para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo*";
     const fraseElemento = document.querySelector('.vaquinha .frase-animada');
     let index = 0;
 
@@ -211,43 +211,77 @@ function configurarAnimacaoVaquinha() {
     observer.observe(document.querySelector('.vaquinha'));
 }
 
-// Função para lidar com a doação e atualizar a barra de progresso
-function configurarBotoesDoacao() {
-    const donationButtons = document.querySelectorAll('.donation-btn');
+// Função para configurar a barra de progresso manualmente
+function configurarProgressBar() {
     const progressBar = document.getElementById('progressBar');
     const progressText = document.getElementById('progressText');
-    let totalAmount = 0;
     const goalAmount = 4000;
 
-    // Verificação básica para garantir que os botões foram encontrados
-    if (donationButtons.length === 0) {
-        console.error('Nenhum botão de doação encontrado.');
-        return; // Interrompe a execução se não houver botões
-    } else {
-        console.log('Botões de doação encontrados:', donationButtons.length);
+    // Defina o valor total arrecadado diretamente no código
+    let totalAmount = 0; // Substitua esse valor pelo total arrecadado atual
+
+    // Atualiza a barra de progresso e o texto com base no valor definido
+    function atualizarBarraProgresso() {
+        const progressPercentage = (totalAmount / goalAmount) * 100;
+        progressBar.style.width = progressPercentage + '%';
+        progressText.textContent = `Total arrecadado: R$ ${totalAmount} de R$ 4000`;
     }
 
-    donationButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const donationValue = parseInt(this.getAttribute('data-value'));
+    // Chama a função para atualizar a barra de progresso ao carregar a página
+    atualizarBarraProgresso();
+}
 
-            // Verifique se o valor da doação está sendo capturado corretamente
-            console.log('Valor da doação:', donationValue);
+// Função para carregar comentários da API
+function loadComments() {
+    const commentsDiv = document.getElementById('comments');
+    fetch('https://nome-do-seu-app.herokuapp.com/api/comments/')
+        .then(response => response.json())
+        .then(data => {
+            commentsDiv.innerHTML = ''; // Limpa a div antes de adicionar novos comentários
+            data.forEach(displayComment);
+        })
+        .catch(error => console.error('Erro ao carregar comentários:', error));
+}
 
-            const userConfirmed = confirm(`Você confirma que fez a doação de R$ ${donationValue}?`);
+// Função para exibir um comentário na página
+function displayComment(comment) {
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment');
+    commentElement.innerHTML = `
+        <p class="username">${comment.username} <small>(${new Date(comment.created_at).toLocaleString()})</small></p>
+        <p>${comment.comment}</p>
+    `;
+    document.getElementById('comments').appendChild(commentElement);
+}
 
-            if (userConfirmed) {
-                totalAmount += donationValue;
-                const progressPercentage = (totalAmount / goalAmount) * 100;
+// Função para lidar com o envio de comentários
+function configurarFormularioComentarios() {
+    const commentForm = document.getElementById('commentForm');
 
-                progressBar.style.width = progressPercentage + '%';
-                progressText.textContent = `Total arrecadado: R$ ${totalAmount} de R$ 4000`;
+    commentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-                if (totalAmount >= goalAmount) {
-                    alert('Parabéns! O valor total foi arrecadado.');
-                }
-            }
-        });
+        const username = document.getElementById('username').value;
+        const comment = document.getElementById('comment').value;
+
+        if (username && comment) {
+            const newComment = { username, comment };
+
+            // Enviar o novo comentário para a API
+            fetch('https://nome-do-seu-app.herokuapp.com/api/comments/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newComment)
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayComment(data);  // Exibir o novo comentário na página
+                commentForm.reset();    // Limpar o formulário
+            })
+            .catch(error => console.error('Erro ao enviar comentário:', error));
+        }
     });
 }
 
@@ -268,7 +302,7 @@ function iniciarContagemRegressiva() {
         const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
         // Exibe a contagem regressiva no elemento com id "countdown"
-        document.getElementById('countdown').innerHTML = `<b>${dias} dias ${horas} horas ${minutos} minutos ${segundos}s restantes para o término da campanha...</b>`;
+        document.getElementById('countdown').innerHTML = `<b>${dias} dias ${horas} horas ${minutos} min ${segundos}s</b>`;
 
         // Se a contagem regressiva terminar, exibe uma mensagem
         if (distancia < 0) {
@@ -287,9 +321,13 @@ window.onload = function() {
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta', configurarAnimacaoPontoColeta);
     carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', function() {
         configurarAnimacaoVaquinha();
-        configurarBotoesDoacao(); // Configurar os botões de doação após a section "vaquinha" ser carregada
+        configurarProgressBar();
     });
-    carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados', iniciarContagemRegressiva);
+    carregarSection('sections/resultados/resultados.html', 'sections/resultados/resultados.css', 'resultados', function() {
+        iniciarContagemRegressiva();
+        loadComments();
+        configurarFormularioComentarios();
+    });
 };
 
 // Função para alterar o tamanho do header ao rolar a página
