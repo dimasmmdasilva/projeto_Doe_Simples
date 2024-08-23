@@ -13,7 +13,7 @@
 
 .resultados .contador {
     text-align: center;
-    padding: 200px;
+    padding: 100px;
 }
 
 .resultados h2 {
@@ -56,7 +56,7 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 200px;
 }
 
 #commentForm button:hover {
