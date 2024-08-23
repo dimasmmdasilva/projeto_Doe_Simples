@@ -74,10 +74,6 @@
     width: 500px;
 }
 
-.comment .username {
-    font-weight: bold;
-}
-
 @media (max-width: 768px) {
     .resultados {
         height: auto;
