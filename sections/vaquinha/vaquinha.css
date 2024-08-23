@@ -98,7 +98,7 @@
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        height: 290px;
+        height: 270px;
         font-size: 20px;
         padding: 20px;
         text-align: center;
@@ -111,21 +111,16 @@
         margin-bottom: 20px;
     }
     .vaquinha button {
-        margin-top: 20px;
-        width: 100%;
-        font-size: 16px;
-    }
-    .vaquinha .donation-btn {
-        font-size: 14px;
-        width: 70px;
-        padding: 8px;
+        max-width: 350px;
+        font-size: 18px;
     }
     .vaquinha .progress-bar-container {
         margin-top: 20px;
         margin-bottom: 10px;
+        max-width: 350px;
     }
     .vaquinha #progressText {
         margin-top: 10px;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
