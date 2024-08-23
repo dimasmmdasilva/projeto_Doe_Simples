@@ -245,7 +245,18 @@ function configurarProgressBar() {
     atualizarBarraProgresso();
 }
 
-// Função para carregar comentários da API
+// Função para carregar mural de mensagens
+function displayComment(comment) {
+    const commentsDiv = document.getElementById('comments');
+    const commentElement = document.createElement('div');
+    commentElement.classList.add('comment'); // Adiciona uma classe CSS para estilizar
+    commentElement.innerHTML = `
+    <p><strong>${comment.username}</strong> em ${new Date(comment.created_at).toLocaleString()}:</p>
+    <p>${comment.comment}</p>
+    `;
+    commentsDiv.appendChild(commentElement);
+}
+
 function loadComments() {
     const commentsDiv = document.getElementById('comments');
     fetch('https://projeto-doe-simples-backend.onrender.com/api/comments/')
