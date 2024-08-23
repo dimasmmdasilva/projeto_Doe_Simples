@@ -95,4 +95,7 @@
     #commentForm button {
         margin-bottom: 20px;
     }
+    .comment {
+        width: 350px;
+    }
 }
