@@ -65,7 +65,7 @@
     background-color: #0056b3;
 }
 
-.comment {
+#comment {
     padding: 10px;
     display: flex;
     flex-direction: column;
