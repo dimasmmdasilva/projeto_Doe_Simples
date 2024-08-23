@@ -137,7 +137,7 @@ footer .social-icon {
 }
 
 footer .social-icon:hover {
-    color: #4d21ff; /* Cor ao passar o mouse */
+    color: #ff6c0b; /* Cor ao passar o mouse */
 }
 
 footer h3 {
@@ -153,6 +153,6 @@ footer h3 {
 @media (max-width: 768px) {
     footer h3 {
         padding: 12px;
-        font-size: 10px;
+        font-size: 14px;
     }
 }

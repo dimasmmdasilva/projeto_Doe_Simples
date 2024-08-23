@@ -11,9 +11,15 @@
     align-items: center;
 }
 
-.resultados .titulo {
+.resultados .contador {
     text-align: center;
     padding: 200px;
+}
+
+.resultados h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .resultados #countdown {
@@ -50,6 +56,7 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+    margin-bottom: 50px;
 }
 
 #commentForm button:hover {
@@ -76,9 +83,15 @@
     }
     .resultados .container {
         height: auto;
-        width: 200px;
+        width: 300px;
     }
     .resultados #countdown {
         width: 200px;
+    }
+    #commentForm {
+        max-width: 350px;
+    }
+    #commentForm button {
+        margin-bottom: 50px;
     }
 }
