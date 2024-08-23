@@ -2,21 +2,24 @@
     background-color: #9dcefe;
     height: auto;
     width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .resultados .container {
     height: auto;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .resultados .contador {
+    text-align: center;
     padding: 100px;
 }
 
 .resultados h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 100px;
     margin-bottom: 50px;
 }
@@ -31,6 +34,8 @@
 }
 
 #commentForm {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
     width: 100%;
@@ -62,7 +67,14 @@
     
 
 #comments {
+    margin-top: 10px;
+}
+
+.comment {
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     width: 500px;
 }
