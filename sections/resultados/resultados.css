@@ -64,16 +64,11 @@
 #commentForm button:hover {
     background-color: #0056b3;
 }
-    
-
-#comments {
-    margin-top: 10px;
-}
 
 .comment {
     padding: 10px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     background-color: white;
     width: 500px;

@@ -251,7 +251,7 @@ function displayComment(comment) {
     const commentElement = document.createElement('div');
     commentElement.classList.add('comment'); // Adiciona uma classe CSS para estilizar
     commentElement.innerHTML = `
-    <p><strong>${comment.username}</strong> em ${new Date(comment.created_at).toLocaleString()}:</p>
+    <p><strong>${comment.username}</strong> em ${new Date(comment.created_at).toLocaleString()}: </p>
     <p>${comment.comment}</p>
     `;
     commentsDiv.appendChild(commentElement);
