@@ -195,7 +195,7 @@ function configurarAnimacaoPontoColeta() {
 function copiarParaAreaDeTransferencia() {
     const textoParaCopiar = document.getElementById('copiarPix').innerText;
     navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        alert("Chave-pix copiada!");
+        alert('Chave-pix copiada * por favor escreva "doe-simples" na nota de identificação do pix *');
     });
 }
 
