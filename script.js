@@ -315,7 +315,7 @@ function iniciarContagemRegressiva() {
         const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
         // Exibe a contagem regressiva no elemento com id "countdown"
-        document.getElementById('countdown').innerHTML = `<b>${dias} dias ${horas} horas ${minutos} min ${segundos}s</b>`;
+        document.getElementById('countdown').innerHTML = `<b>Tempo restante: ${dias} dias ${horas} horas ${minutos} min ${segundos}s</b>`;
 
         // Se a contagem regressiva terminar, exibe uma mensagem
         if (distancia < 0) {
