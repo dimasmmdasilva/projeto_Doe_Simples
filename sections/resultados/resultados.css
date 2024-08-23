@@ -58,7 +58,7 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 200px;
+    margin-bottom: 20px;
 }
 
 #commentForm button:hover {
@@ -73,6 +73,9 @@
 .comment {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .comment .username {
@@ -94,6 +97,6 @@
         max-width: 350px;
     }
     #commentForm button {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 }
