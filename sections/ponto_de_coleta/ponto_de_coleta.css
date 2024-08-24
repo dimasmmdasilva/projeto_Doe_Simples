@@ -21,8 +21,7 @@
     font-size: 22px;
     text-align: justify;
     max-width: 600px;
-    height: 200px;
-    margin-bottom: 40px;
+    height: 150px;
     opacity: 1; /* Temporariamente forçado a 1 para debug */
     transition: opacity 2s ease-in-out;
     color: #000;

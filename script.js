@@ -155,7 +155,7 @@ function configurarAnimacaoDoacoes() {
 
 // Função para animar seção ponto_coleta
 function configurarAnimacaoPontoColeta() {
-    const frase = "No pátio principal em frente à área de alimentação da Universidade Salesiana de São Paulo em Campinas, obrigado por ajudar a cultivar a solidariedade em nossa sociedade.";
+    const frase = "Ponto de coleta está no pátio principal da área de alimentação da UNISAL - Campus São José, ajude a cultivar a solidariedade em nossa sociedade.";
     const fraseElemento = document.querySelector('.ponto_coleta .frase-animada');
     
     if (!fraseElemento) {
@@ -195,13 +195,13 @@ function configurarAnimacaoPontoColeta() {
 function copiarParaAreaDeTransferencia() {
     const textoParaCopiar = document.getElementById('copiarPix').innerText;
     navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        alert('Chave-pix copiada * por favor escreva "doe-simples" na nota de identificação do pix * obrigado');
+        alert('chave-pix copiada com sucesso *por favor escreva "doe simples" na nota de identificação do pix*');
     });
 }
 
 // Função para configurar a animação da seção "vaquinha"
 function configurarAnimacaoVaquinha() {
-    const frasePix = "Doe simples com pix e contribua para a aquisição de um novo forno para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo*";
+    const frasePix = "Doe com pix e contribua para a aquisição de um novo forno para a instituição Semente Esperança *copie a chave-pix ao clicar no botão abaixo*";
     const fraseElemento = document.querySelector('.vaquinha .frase-animada');
     let index = 0;
 
@@ -245,7 +245,7 @@ function configurarProgressBar() {
     atualizarBarraProgresso();
 }
 
-// Função para carregar mural de mensagens
+// Função para criar mural de mensagens
 function displayComment(comment) {
     const commentsDiv = document.getElementById('comments');
     const commentElement = document.createElement('div');
