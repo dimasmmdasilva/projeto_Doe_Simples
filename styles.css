@@ -131,7 +131,8 @@ footer .footer-content {
 footer .social-icon {
     color: white;
     font-size: 40px;
-    margin: 0 10px;
+    margin: 20px;
+    margin-bottom: 40px;
     text-decoration: none;
     transition: color 0.5s ease;
 }
@@ -141,7 +142,7 @@ footer .social-icon:hover {
 }
 
 footer h3 {
-    padding: 12px;
+    padding: 20px;
     font-size: 14px;
     font-weight: bolder;
     position: absolute;
@@ -152,7 +153,6 @@ footer h3 {
 
 @media (max-width: 768px) {
     footer h3 {
-        padding: 12px;
-        font-size: 14px;
+        max-width: 350px;
     }
 }

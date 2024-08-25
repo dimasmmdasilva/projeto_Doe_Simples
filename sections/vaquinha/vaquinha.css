@@ -98,7 +98,7 @@
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        height: 150px;
+        height: 200px;
         width: auto;
         font-size: 20px;
         padding: 20px;
@@ -110,8 +110,8 @@
         margin-bottom: 20px;
     }
     .vaquinha button {
-        max-width: 350px;
-        font-size: 18px;
+        max-width: 250px;
+        font-size: 16px;
     }
     .vaquinha .progress-bar-container {
         margin-top: 20px;
