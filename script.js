@@ -245,7 +245,7 @@ function configurarProgressBar() {
     atualizarBarraProgresso();
 }
 
-// Função para criar mural de mensagens
+// Função para criar mensagens no mural
 function displayComment(comment) {
     const commentsDiv = document.getElementById('comments');
     const commentElement = document.createElement('div');

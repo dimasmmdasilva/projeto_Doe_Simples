@@ -90,33 +90,29 @@
     .vaquinha .titulo {
         text-align: center;
     }
-    .vaquinha .frase-animada {
-        text-align: center;
-        min-height: 60px;
-    }
 }
 
 @media (max-width: 768px) {
     .vaquinha .frase-animada {
-        height: 200px;
+        height: 230px;
         width: auto;
         font-size: 20px;
         padding: 20px;
-        text-align: center;
+        text-align: justify;
     }
     .vaquinha img {
-        width: 85%;
+        max-width: 250px;
         height: auto;
         margin-bottom: 20px;
     }
     .vaquinha button {
         max-width: 250px;
-        font-size: 16px;
+        font-size: 14px;
     }
     .vaquinha .progress-bar-container {
         margin-top: 20px;
         margin-bottom: 10px;
-        max-width: 350px;
+        max-width: 250px;
     }
     .vaquinha #progressText {
         margin-top: 10px;
