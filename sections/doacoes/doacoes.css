@@ -29,7 +29,7 @@
 
 .imagens-doacao {
     display: flex;
-    gap: 20px; /* Espaçamento entre as imagens */
+    gap: 10px; /* Espaçamento entre as imagens */
     flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas menores */
     justify-content: center; /* Centraliza as imagens */
 }
@@ -37,7 +37,7 @@
 .imagem-arroz, .imagem-feijao {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    margin: 25px;
+    margin: 20px;
     width: 300px; /* Largura da imagem */
     height: 300px; /* Altura da imagem */
     border-radius: 5%; /* Borda levemente arredondada */
@@ -79,6 +79,7 @@
 
     .imagens-doacao {
         flex-direction: column;
-        max-width: 300px;
+        max-width: 250px;
+        margin: auto;
     }
 }
