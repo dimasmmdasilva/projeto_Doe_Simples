@@ -134,25 +134,27 @@ footer .social-icon {
     margin: 20px;
     margin-bottom: 40px;
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color 0.8s ease;
 }
 
 footer .social-icon:hover {
-    color: #1077ff; /* Cor ao passar o mouse */
+    color: #212cff; /* Cor ao passar o mouse */
 }
 
 footer h3 {
-    padding: 20px;
-    font-size: 14px;
+    padding: 10px; /* Reduzindo o padding para diminuir o espaço ao redor do texto */
+    margin-top: 10px; /* Ajustando o margin-top */
+    font-size: 16px; /* Reduzindo o tamanho da fonte para garantir que o texto caiba em uma linha */
     font-weight: bolder;
     position: absolute;
-    bottom: 0; /* Alinha na parte inferior */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para que o h3 fique perfeitamente centralizado */
+    bottom: 10px; /* Aumentando a distância do texto em relação ao fundo do footer */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Garante que o texto não quebre em duas linhas */
 }
 
 @media (max-width: 768px) {
     footer h3 {
-        max-width: 350px;
+        margin-top: 40px;
     }
 }
