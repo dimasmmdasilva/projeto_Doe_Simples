@@ -31,6 +31,7 @@ header {
 header .titulo {
     transition: font-size 0.3s ease-in-out;
     font-weight: bolder;
+    top: 10px;
 }
 
 header.reduzido {
