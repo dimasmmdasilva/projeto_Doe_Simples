@@ -121,6 +121,29 @@ function configurarSlidesAtividades() {
     showSlides(); // Inicia o slideshow
 }
 
+// Função para configurar as animações na seção "porque_ajudar"
+function configurarPorqueAjudarObserver() {
+    const PorqueAjudarSection = document.querySelector('#porque_ajudar');
+    if (PorqueAjudarSection) {
+        const primeiraMensagem = PorqueAjudarSection.querySelector('.primeira-mensagem');
+        const segundaMensagem = PorqueAjudarSection.querySelector('.segunda-mensagem');
+        const terceiraMensagem = PorqueAjudarSection.querySelector('.terceira-mensagem');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    primeiraMensagem.classList.add('aparecer');
+                    segundaMensagem.classList.add('aparecer');
+                    terceiraMensagem.classList.add('aparecer');
+                    observer.disconnect(); // Desconecta o observer após iniciar as animações
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(PorqueAjudarSection);
+    }
+}
+
 // Função para configurar a animação da seção de doações
 function configurarAnimacaoDoacoes() {
     const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2kgs) e feijão (1kg) *validade acima de 6 meses*";
@@ -341,6 +364,7 @@ window.onload = function() {
     carregarSection('sections/doe_simples/doe_simples.html', 'sections/doe_simples/doe_simples.css', 'doe_simples', configurarDoeSimplesObserver);
     carregarSection('sections/ong_semente/ong_semente.html', 'sections/ong_semente/ong_semente.css', 'ong_semente', configurarOngSementeObserver);
     carregarSection('sections/atividades/atividades.html', 'sections/atividades/atividades.css', 'atividades', configurarSlidesAtividades);
+    carregarSection('sections/porque_ajudar/porque_ajudar.html', 'sections/porque_ajudar/porque_ajudar.css', 'porque_ajudar', configurarPorqueAjudarObserver);
     carregarSection('sections/doacoes/doacoes.html', 'sections/doacoes/doacoes.css', 'doacoes', configurarAnimacaoDoacoes);
     carregarSection('sections/ponto_de_coleta/ponto_de_coleta.html', 'sections/ponto_de_coleta/ponto_de_coleta.css', 'ponto_coleta', configurarAnimacaoPontoColeta);
     carregarSection('sections/vaquinha/vaquinha.html', 'sections/vaquinha/vaquinha.css', 'vaquinha', function() {
