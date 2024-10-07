@@ -146,7 +146,7 @@ function configurarPorqueAjudarObserver() {
 
 // Função para configurar a animação da seção de doações
 function configurarAnimacaoDoacoes() {
-    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2 kgs) e feijão (1 kg) *validade acima de 6 meses* entregue no ponto de coleta";
+    const frase = "É simples, doe alimentos ricos em nutrientes: arroz (2 kgs) e feijão (1 kg) *validade acima de 6 meses* entregue no ponto de coleta.";
     const fraseElemento = document.querySelector('.frase-animada');
     const imagemArroz = document.querySelector('.imagem-arroz');
     const imagemFeijao = document.querySelector('.imagem-feijao');
