@@ -99,20 +99,21 @@
         font-size: 20px;
         padding: 20px;
         text-align: justify;
+        margin-bottom: -30px;
     }
     .vaquinha img {
-        max-width: 250px;
+        max-width: 350px;
         height: auto;
         margin-bottom: 20px;
     }
     .vaquinha button {
-        max-width: 250px;
+        max-width: 350px;
         font-size: 14px;
     }
     .vaquinha .progress-bar-container {
         margin-top: 20px;
         margin-bottom: 10px;
-        max-width: 250px;
+        max-width: 350px;
     }
     .vaquinha #progressText {
         margin-top: 10px;

@@ -76,7 +76,7 @@
 
 @media (max-width: 768px) {
     .slides img {
-        height: 250px;
+        height: 350px;
     }
     .text {
         font-size: 16px;

@@ -40,5 +40,8 @@
 @media (max-width: 768px) {
     .mensagem {
         font-size: 20px !important;
+        margin-bottom: 5px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
